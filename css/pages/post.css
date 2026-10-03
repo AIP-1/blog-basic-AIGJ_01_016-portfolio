@@ -1,0 +1,107 @@
+.post-header {
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.post-header .category-label:hover {
+  text-decoration: underline;
+}
+
+.post-header h1 {
+  margin: 8px 0 12px;
+  font-family: var(--font-brush);
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 1.15;
+  word-break: keep-all;
+}
+
+.post-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 12px;
+  font-size: 14px;
+  color: var(--color-text-sub);
+}
+
+.post-actions {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.post-actions a,
+.post-actions button {
+  font-size: 13px;
+  color: var(--color-text-sub);
+}
+
+.post-actions a:hover,
+.post-actions button:hover {
+  color: var(--color-text);
+  text-decoration: underline;
+}
+
+.post-detail .post-content {
+  padding: 40px 0 48px;
+}
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding-bottom: 32px;
+}
+
+/* ===== 이전 · 다음 글 ===== */
+.post-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.post-nav a,
+.post-nav .none {
+  display: block;
+  padding: 20px 16px;
+}
+
+.post-nav a:hover {
+  background: var(--color-surface);
+}
+
+.post-nav .next {
+  border-left: 1px solid var(--color-border);
+  text-align: right;
+}
+
+.post-nav .label {
+  display: block;
+  font-size: 13px;
+  color: var(--color-text-sub);
+}
+
+.post-nav .title {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-weight: 600;
+}
+
+.post-nav .none .title {
+  font-weight: 400;
+  color: var(--color-text-sub);
+}
+
+@media (max-width: 600px) {
+  .post-header h1 {
+    font-size: 38px;
+  }
+
+  .post-detail .post-content {
+    font-size: 16px;
+  }
+}

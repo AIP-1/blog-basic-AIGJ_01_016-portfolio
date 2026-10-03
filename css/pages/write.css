@@ -1,0 +1,204 @@
+/* ===== 상단 바 ===== */
+.write-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+  padding: 0 24px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.write-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  padding: 8px 18px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background: var(--color-surface);
+}
+
+.btn-primary {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--color-accent);
+  opacity: 0.9;
+}
+
+/* ===== 툴바 ===== */
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg);
+}
+
+.toolbar button,
+.toolbar .color-picker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px;
+  height: 34px;
+  padding: 0 8px;
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--color-text);
+}
+
+.toolbar button:hover,
+.toolbar .color-picker:hover {
+  background: var(--color-surface);
+}
+
+.toolbar button.is-active {
+  background: var(--color-surface);
+  color: var(--color-accent);
+}
+
+.toolbar svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+}
+
+.toolbar svg circle {
+  fill: currentColor;
+  stroke: none;
+}
+
+.toolbar select {
+  height: 34px;
+  padding: 0 8px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: var(--color-bg);
+  font-size: 14px;
+}
+
+.toolbar .divider {
+  width: 1px;
+  height: 18px;
+  margin: 0 6px;
+  background: var(--color-border);
+}
+
+/* 글자색: 'A' 아래에 고른 색이 막대로 보이게 */
+.color-picker {
+  position: relative;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.color-picker input {
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  bottom: 5px;
+  width: auto;
+  height: 4px;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.color-picker input::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.color-picker input::-webkit-color-swatch {
+  border: none;
+}
+
+/* ===== 작성 영역 ===== */
+.write-body {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 20px 120px;
+}
+
+.write-meta input {
+  background: var(--color-bg);
+  width: 220px;
+  padding: 6px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.write-title {
+  width: 100%;
+  margin: 20px 0 8px;
+  padding: 12px 0;
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  outline: none;
+  background: transparent;
+  font-family: var(--font-brush);
+  font-size: 48px;
+  line-height: 1.2;
+}
+
+.editor {
+  min-height: 420px;
+  padding: 24px 0;
+  outline: none;
+}
+
+.editor.is-empty::before {
+  content: attr(data-placeholder);
+  position: absolute;
+  color: #b0b0b0;
+  pointer-events: none;
+}
+
+.editor img {
+  cursor: default;
+}
+
+.write-tags input {
+  background: transparent;
+  width: 100%;
+  padding: 12px 0;
+  border: none;
+  border-top: 1px solid var(--color-border);
+  outline: none;
+  font-size: 15px;
+}
+
+@media (max-width: 600px) {
+  .write-topbar {
+    padding: 0 16px;
+  }
+
+  .toolbar {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  .write-title {
+    font-size: 36px;
+  }
+}
